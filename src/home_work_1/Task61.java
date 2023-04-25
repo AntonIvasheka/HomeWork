@@ -10,6 +10,6 @@ public class Task61 {
         String name = in.next();
         if (Objects.equals(name,"Вася"))  System.out.println("Привет! \n" + "Я тебя так долго ждал");
         if (Objects.equals(name, "Анастасия"))  System.out.println("Я тебя так долго ждал");
-        else System.out.println("Добрый день, а кто вы?");
+         else System.out.println("Добрый день, а кто вы?");
     }
 }
