@@ -31,7 +31,7 @@ public class SortsUtils {
         int right = arrayLength - 1;
         int chek = 1;
         int tmp;
-        while ((left < right) | chek > 0) {
+        while (chek > 0 || (left < right)) {
             chek = 0;
             for (int i = left; i < right; i++) {
                 if (arr[i] > arr[i + 1]) {
