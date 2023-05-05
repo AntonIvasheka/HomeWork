@@ -1,7 +1,3 @@
-ArraysUtils                   2.1 Создать класс ArraysUtils. В этом классе не должно быть main метода.
-                              В этом классе написать следующие методы:
-                              2.1.1 arrayFromConsole()
-                              2.1.2 arrayRandom(int size, int maxValueExclusion)
 Arrays2111                    2.1.1.1 Пример в отдельном классе с main. int[] container = arrayFromConsole()
 Arrays2121                    2.1.2.1 Пример в отдельном классе с main. int[] container = arrayRandom(5, 100)
 ArrayIteration                2.2 Создать класс ArraysIteration. Все задачи в одном классе, в отдельных методах:
