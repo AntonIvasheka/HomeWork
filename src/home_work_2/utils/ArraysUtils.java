@@ -1,9 +1,7 @@
-package home_work_2.arrays;
+package home_work_2.utils;
 
 import java.util.Random;
 import java.util.Scanner;
-
-import static java.lang.Math.random;
 
 public class ArraysUtils {
     public static int[] arrayFromConsole() {
