@@ -1,9 +1,14 @@
 package home_work_2.utils;
 
 public class SortsUtils {
+    /**
+     * Сортирует переданный массив при помощи алгоритма пузырьковой сортировки
+     * @param arr Массив из целых чисел
+     * @return Отсортированный массив по возрастанию
+     */
     public static int[] sort(int[] arr) {
         int arrayLength = arr.length;
-        int tmp = 0;
+        int tmp;
         for (int j = 0; j < (arrayLength - 1); j++) {
             for (int i = (arrayLength - 1); i > j; i--) {
                 if (arr[i] < arr[i - 1]) {
@@ -15,12 +20,17 @@ public class SortsUtils {
         }
         return (arr);
     }
+    /**
+     * Сортирует переданный массив при помощи алгоритма шейкерной сортировки
+     * @param arr Массив из целых чисел
+     * @return Отсортированный массив по возрастанию
+     */
     public static int[] shake(int[] arr) {
         int arrayLength = arr.length;
         int left = 0;
         int right = arrayLength - 1;
         int chek = 1;
-        int tmp = 0;
+        int tmp;
         while ((left < right) && chek > 0) {
             chek = 0;
             for (int i = left; i < right; i++) {
