@@ -1,6 +1,6 @@
 package home_work_2.arrays;
 
-import static home_work_2.arrays.ArraysUtils.arrayFromConsole;
+import static home_work_2.utils.ArraysUtils.arrayFromConsole;
 
 public class ArraysIteration {
     public static void main(String[] args) {
@@ -9,7 +9,6 @@ public class ArraysIteration {
         array222(prArray);
         array223(prArray);
     }
-
     public static void array221(int[] prArray) {
         for (int k : prArray) {
             System.out.print(k + " ");
@@ -29,13 +28,10 @@ public class ArraysIteration {
     }
     public static void array223(int[] prArray) {
         int arrayLength = prArray.length;
-        int j = 0;
         do {
             arrayLength = arrayLength -1;
             System.out.print(prArray[arrayLength] + " ");
         } while (arrayLength > 0);
         System.out.println();
     }
-
-
 }
