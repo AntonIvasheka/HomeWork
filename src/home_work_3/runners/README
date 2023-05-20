@@ -1,0 +1,12 @@
+WithoutCalculatorMain                        1. Создать класс WithoutCalculatorMain в котором необходимо посчитать
+                                             следующие выражения: 4.1 + 15 * 7 + (28 / 5) ^ 2
+CalculatorWithOperatorMain                   2.5 Создать класс CalculatorWithOperatorMain
+CalculatorWithMathCopyMain                   3.3 Создать класс CalculatorWithMathCopyMain
+CalculatorWithMathExtendsMain                4.4 Создать класс CalculatorWithMathExtendsMain
+CalculatorWithCounterClassicMain             5.5 Создать класс CalculatorWithCounterClassicMain
+CalculatorWithCounterAutoSuperMain           6.5 Создать класс CalculatorWithCounterAutoSuperMain
+CalculatorWithCounterDelegateCompositeMain   7.7 Создать класс CalculatorWithCounterDelegateCompositeMain
+WithCounterDelegateAgregationMain            8.7 Создать класс CalculatorWithCounterDelegateAgregationMain
+CalculatorWithCounterDelegateChoiceAgregationMain  9.7 Создать класс CalculatorWithCounterDelegateChoiceAgregationMain
+                                                   (не сделано)
+Test1, Test2                                 Наброски с парсингом, RPN, методом Ньютона
