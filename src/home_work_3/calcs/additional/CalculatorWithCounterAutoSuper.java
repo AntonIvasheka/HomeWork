@@ -2,7 +2,6 @@ package home_work_3.calcs.additional;
 
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
-import static java.lang.Math.*;
 
 public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     long chek = 0;

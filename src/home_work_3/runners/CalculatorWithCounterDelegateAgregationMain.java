@@ -6,10 +6,10 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
 public class CalculatorWithCounterDelegateAgregationMain {
     public static void main(String[] args) {
         double resalt;
-        CalculatorWithCounterAutoAgregation CwcaA = new CalculatorWithCounterAutoAgregation(new CalculatorWithMathCopy());
-        resalt = CwcaA.plusM(4.1, CwcaA.plusM(CwcaA.powM(CwcaA.divM(28, 5), 2), CwcaA.multM(15, 7)));
+        CalculatorWithCounterAutoAgregation cwcaa = new CalculatorWithCounterAutoAgregation(new CalculatorWithMathCopy());
+        resalt = cwcaa.plusM(4.1, cwcaa.plusM(cwcaa.powM(cwcaa.divM(28, 5), 2), cwcaa.multM(15, 7)));
         System.out.println(resalt);
         System.out.println();
-        System.out.println(CwcaA.getCountOperation());
+        System.out.println(cwcaa.getCountOperation());
     }
 }

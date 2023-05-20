@@ -2,7 +2,6 @@ package home_work_3.calcs.additional;
 
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
-import static java.lang.Math.*;
 
 public class CalculatorWithCounterAutoAgregation {
     long chek = 0;
