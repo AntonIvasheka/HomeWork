@@ -4,7 +4,7 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithMathCopy Cwmc = new CalculatorWithMathCopy();
+    CalculatorWithMathCopy cwmc = new CalculatorWithMathCopy();
     long chek = 0;
     public long getCountOperation() {
         return chek;
@@ -15,35 +15,35 @@ public class CalculatorWithCounterAutoComposite {
 
     public double plusM(double a, double b) {
         incrementCountOperation();
-        return Cwmc.plusM(a, b);
+        return cwmc.plusM(a, b);
     }
 
     public double minusM(double a, double b) {
         incrementCountOperation();
-        return Cwmc.minusM(a, b);
+        return cwmc.minusM(a, b);
     }
 
     public double divM(double a, double b) {
         incrementCountOperation();
-        return Cwmc.divM(a, b);
+        return cwmc.divM(a, b);
     }
 
     public double multM(double a, double b) {
         incrementCountOperation();
-        return Cwmc.multM(a, b);
+        return cwmc.multM(a, b);
     }
 
     public double powM(double a, double b) {
         incrementCountOperation();
-        return Cwmc.powM(a, b);
+        return cwmc.powM(a, b);
     }
     public double absM(double a)  {
         incrementCountOperation();
-        return Cwmc.absM(a);
+        return cwmc.absM(a);
     }
     public double sqrtM(double a) {
         incrementCountOperation();
-        return Cwmc.sqrtM(a);
+        return cwmc.sqrtM(a);
     }
 
 

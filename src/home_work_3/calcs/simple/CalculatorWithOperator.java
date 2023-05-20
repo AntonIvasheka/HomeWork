@@ -1,7 +1,6 @@
 package home_work_3.calcs.simple;
 
 public class CalculatorWithOperator {
-    int chek = 0;
     public double plusM(double a, double b) {
         a = a + b;
         return a;
