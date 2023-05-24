@@ -1,5 +1,7 @@
 package home_work_2.arrays;
 
+import java.sql.Array;
+
 import static home_work_2.utils.ArraysUtils.arrayRandom;
 
 
@@ -20,7 +22,7 @@ public class Arrays24 {
      * Подсчет суммыы чётных положительных элементов массива с выволом результата в консоль
      * @param inArray Целочисленный массив
      */
-    public static void array241(int[] inArray) {
+    public static long array241(int[] inArray) {
         for (int k : inArray) {
             System.out.print(k + " ");
         }
@@ -36,13 +38,14 @@ public class Arrays24 {
             i++;
         }
         System.out.println("Сумма четных положительных элементов : " + sum);
+        return sum;
     }
 
     /**
      * Нахождение максимального элемента массива с чётным индексом и выводом реззультата в консоль
      * @param inArray Целочисленный массив
      */
-    public static void array242(int[] inArray) {
+    public static int array242(int[] inArray) {
         int arrayLength = inArray.length;
         int i = 0;
         int maxElement = inArray[0];
@@ -53,15 +56,17 @@ public class Arrays24 {
             i++;
         }
         System.out.println("Максимальный элемент с чётным индексом : " + maxElement);
+        return maxElement;
     }
 
     /**
      * Нахождение элементов массива меньших среднего арифметического и выводом результата в консоль
      * @param inArray Целочисленный массив
      */
-    public static void array243(int[] inArray) {
+    public static String array243(int[] inArray) {
         int arrayLength = inArray.length;
         double middle = 0;
+        String resStr ="";
         for (int j : inArray) {
             middle = middle + j;
         }
@@ -70,20 +75,23 @@ public class Arrays24 {
         for (int k : inArray) {
             if ( k < middle) {
                 System.out.print(k +" ");
+                resStr = resStr + k + " ";
             }
         }
         System.out.println();
+        return resStr;
     }
 
     /**
      * Нахождение двух наименьших элементов массива и вывод результата в консоль
      * @param inArray Целочисленный массив
      */
-    public static void array244 (int[] inArray) {
+    public static String array244 (int[] inArray) {
         int arrayLength = inArray.length;
         int minA = inArray[0];
         int minB = inArray[1];
-        for (int  i = 3; i < arrayLength; i++) {
+        String resStr ="";
+        for (int  i = 2; i < arrayLength; i++) {
             if ( inArray[i] < minB) {
                 minB = inArray[i];
             } else if ( inArray[i] < minA) {
@@ -91,6 +99,8 @@ public class Arrays24 {
             }
         }
         System.out.println("Два наименьших элемента массива: " + minA + "   " + minB);
+        resStr = resStr + minA + " " + minB;
+        return resStr;
     }
 
     /**
@@ -99,7 +109,7 @@ public class Arrays24 {
      * @param a Ограничение интервала
      * @param b Ограничение интервала
      */
-    public static void array245 (int[] inArray , int a, int b) {
+    public static int[] array245 (int[] inArray , int a, int b) {
         int arrayLength = inArray.length;
         int[] outArray = new int[arrayLength];
         int delEl = 0;
@@ -118,13 +128,14 @@ public class Arrays24 {
                   System.out.print(x + " ");
             }
         System.out.println("Удалены элементы в интервале " + "[" + a + ", " + b + "]");
+        return outArray;
     }
 
     /**
      * Подсчёт суммы циифр элементов массива и вывод результата в консоль
      * @param inArray Целочисленный массив
      */
-    public static void array246 (int[] inArray) {
+    public static int array246 (int[] inArray) {
         int sum = 0;
         for (int x : inArray) {
             do {
@@ -133,6 +144,7 @@ public class Arrays24 {
             } while (x != 0);
         }
         System.out.println("Сумма цифр массива : " + sum);
+        return sum;
     }
 
 }
