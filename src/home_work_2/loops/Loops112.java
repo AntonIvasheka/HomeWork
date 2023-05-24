@@ -10,14 +10,14 @@ public class Loops112 {
         if (n == 0) {
             return 1;
         }else {
-                System.out.print(k - n);
-                if (n != 1) {
-                    System.out.print(" * ");
-                } else {
-                    System.out.print(" = ");
-                }
-                return n * factorial(n - 1, k);
+            System.out.print(k - n);
+            if (n != 1) {
+                System.out.print(" * ");
+            } else {
+                System.out.print(" = ");
             }
+            return n * factorial(n - 1, k);
+        }
     }
 }
 

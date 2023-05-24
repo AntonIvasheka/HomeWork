@@ -3,12 +3,7 @@ package home_work_2.loops;
 import java.util.Scanner;
 
 public class Loops13 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        double a;
-        int b;
-        a = in.nextDouble();
-        b = in.nextInt();
+    public static double loop13(double a, int b) {
         int i =0;
         double res = 1;
         while (i != b) {
@@ -16,5 +11,6 @@ public class Loops13 {
             res = res * a;
         }
         System.out.println(res);
+        return res;
     }
 }
