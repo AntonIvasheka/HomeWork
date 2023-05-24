@@ -8,8 +8,20 @@ public class Task61 {
         System.out.println("Введите ваше имя : ");
         Scanner in = new Scanner(System.in);
         String name = in.next();
-        if (Objects.equals(name,"Вася"))  System.out.println("Привет! \n" + "Я тебя так долго ждал");
-        if (Objects.equals(name, "Анастасия"))  System.out.println("Я тебя так долго ждал");
-         else System.out.println("Добрый день, а кто вы?");
+        answer(name);
+    }
+    public static String answer(String name) {
+        if (Objects.equals(name,"Вася")) {
+            System.out.println("Привет! \n" + "Я тебя так долго ждал");
+            return ("Привет! \n" + "Я тебя так долго ждал");
+        }
+        if (Objects.equals(name, "Анастасия")) {
+            System.out.println("Я тебя так долго ждал");
+            return ("Я тебя так долго ждал");
+        }
+         else {
+             System.out.println("Добрый день, а кто вы?");
+             return ("Добрый день, а кто вы?");
+        }
     }
 }

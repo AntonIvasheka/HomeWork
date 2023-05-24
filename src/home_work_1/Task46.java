@@ -13,13 +13,25 @@ public class Task46 {
                 System.out.println("Определение года на високосность. Введите год : ");
                 year = in.nextInt();
                 break;
-            }
-            catch (InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Wrong value, repeat!");
             }
         }
-        if (year%4 != 0) System.out.println("Обычный год");
-            else if (year%100 ==0 && year%400 == 0) System.out.println("Обычный год");
-                else System.out.println("Високосный год");
+        whatYear(year);
+    }
+    public static String whatYear(int year ) {
+        if (year%4 != 0) {
+            System.out.println("Обычный год");
+            return "Обычный год";
+        } else if (year%100 ==0 && year%400 == 0) {
+                System.out.println("Обычный год");
+                return "Обычный год";
+            } else {
+            System.out.println("Високосный год");
+            return "Високосный год";
+            }
     }
 }
+
+
+

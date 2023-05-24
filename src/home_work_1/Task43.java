@@ -20,11 +20,22 @@ public class Task43 {
                 System.out.println("Wrong value, repeat!");
             }
         }
-        if (a%b==0)
+        result(a, b);
+    }
+    public static boolean result(double a, double b) {
+        if (a % b == 0) {
             System.out.println("Первое число делится нацело на второе");
-        else if (b%a==0)
+            return true;
+        }
+        else if (b % a == 0) {
             System.out.println("Второе число делится нацело на первое");
-             else System.out.println("Числа не делятся друг на друга");
+            return true;
+        }
+
+        else {
+            System.out.println("Числа не делятся друг на друга");
+            return false;
+        }
 
     }
 }
