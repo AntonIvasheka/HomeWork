@@ -105,8 +105,6 @@ public class DataContainer<T> {
                     T[] increaceArray = Arrays.copyOf(data, newLength);
                     data = Arrays.copyOf(increaceArray,increaceArray.length);
                     data[i+1] = item;
-                    //System.out.println(DataContainerCopy.data[i+1]);
-                    System.out.println(i+1);
                     return i+1;
                 }
             }
@@ -118,10 +116,23 @@ public class DataContainer<T> {
      * @param comparator переданный объект реализующий метод сравнения в отдельном классе
      */
     public void sort (Comparator<T> comparator) {
-        int arrayLength = data.length;
+        int arrayLength = data.length;                           //  сортировка - null, помещаются в конец массива
+        int checkNull = 0;
         T tmp;
-        for (int j = 0; j < (arrayLength - 1); j++) {
-            for (int i = (arrayLength - 1); i > j; i--) {
+        for (int k=0; k < (arrayLength - 1); k++){
+            if (data[k] == null) {
+                checkNull++;                                    // и исключчаются из дальнейших сортировок
+                for (int l = (arrayLength - 1); k<l; l--){
+                    if (data[l] != null) {
+                        tmp = data[l];
+                        data[l] = data[k];
+                        data[k] = tmp;
+                    }
+                }
+            }
+        }
+        for (int j = 0; j < (arrayLength - 1 - checkNull); j++) {
+            for (int i = (arrayLength - 1 - checkNull); i > j; i--) {
                 if (0 < comparator.compare(data[i],data[i - 1])) {
                     tmp = data[i - 1];
                     data[i - 1] = data[i];
@@ -151,6 +162,4 @@ public class DataContainer<T> {
         }
         return "";
     }
-
-
 }
