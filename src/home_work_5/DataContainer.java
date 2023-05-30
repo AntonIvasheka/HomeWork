@@ -131,4 +131,26 @@ public class DataContainer<T> {
         }
     }
 
+    /**
+     * Переопредение метода toString()
+     * @return вывод содержимого data без ячеек в которых хранится null
+     */
+    @Override
+    public String toString() {
+        T[] withoutNull = Arrays.copyOf(data, 0);
+        int j =1;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] != null) {
+                withoutNull = Arrays.copyOf(withoutNull, j);
+                withoutNull[j-1] = data[i];
+                j++;
+            }
+        }
+        if (j>1) {
+            return Arrays.toString(withoutNull);
+        }
+        return "";
+    }
+
+
 }
