@@ -39,7 +39,7 @@ public class DataContainer<T> {
     public boolean delete(int index) {
         int i=0;
         int j=0;
-        if (data.length-1 < index) {
+        if ((data.length-1 < index) | (index < 0)) {
             return false;
         } else {
             T[] withoutElement = Arrays.copyOf(data, data.length-1);
@@ -67,7 +67,7 @@ public class DataContainer<T> {
             return false;
         }
         while ((j < 0) & (i < data.length)) {  // Ищет индекс удаляемого элемента
-            if (data[i] == index) {
+            if (index.equals(data[i])) {
                 j = i;
             } else {
                 i++;
@@ -167,7 +167,7 @@ public class DataContainer<T> {
     /**
      *Данный метод будет сортирyет элементы в ПЕРЕДАННОМ объекте DataContainer,
      * используя реализацию сравнения вызываемый у хранимых объектов
-     * @param container объект DataContainer (DataContainer<>(arr))
+     * @param container объект container
      */
     public static void sort(DataContainer<? extends Comparable> container) {
         int arrayLength = container.data.length;                 //  сортировка - null, помещаются в конец массива
