@@ -3,7 +3,6 @@ package home_work_5;
 import java.util.Arrays;
 import java.util.Comparator;
 
-
 public class DataContainer<T> {
     private T[] data;
 
@@ -12,7 +11,8 @@ public class DataContainer<T> {
         this.data = data;
     }
     /**
-     *
+     * Данный метод получает из DataContainer'а, из поля data, предварительно сохранённый объект,
+     * который мы передали на предыдущем шаге через метод add
      * @param index Индекс массива, содержащего данные
      * @return Предварительно сохранённый объект, находящийся в ячейке под индексом
      */
@@ -24,8 +24,8 @@ public class DataContainer<T> {
     }
 
     /**
-     *
-     * @return Данный метод возвращает массив из поля data
+     * Данный метод возвращает массив из поля data
+     * @return массив из поля data
      */
     public T[] getItems() {
         return data;
@@ -102,8 +102,8 @@ public class DataContainer<T> {
                     return i;
                 } else if ((data.length-1 == i) & (data[data.length-1] != null)) {
                     int newLength = data.length+1;
-                    T[] increaceArray = Arrays.copyOf(data, newLength);
-                    data = Arrays.copyOf(increaceArray,increaceArray.length);
+                    T[] increaseArray = Arrays.copyOf(data, newLength);
+                    data = Arrays.copyOf(increaseArray,increaseArray.length);
                     data[i+1] = item;
                     return i+1;
                 }
@@ -159,7 +159,47 @@ public class DataContainer<T> {
         }
         if (j>1) {
             return Arrays.toString(withoutNull);
+        } else {
+            return "";
         }
-        return "";
+    }
+
+    /**
+     *Данный метод будет сортирyет элементы в ПЕРЕДАННОМ объекте DataContainer,
+     * используя реализацию сравнения вызываемый у хранимых объектов
+     * @param container объект DataContainer (DataContainer<>(arr))
+     */
+    public static void sort(DataContainer<? extends Comparable> container) {
+        int arrayLength = container.data.length;                 //  сортировка - null, помещаются в конец массива
+        int checkNull = 0;
+        for (int k=0; k < (arrayLength - 1); k++){
+            if (container.data[k] == null) {
+                checkNull++;                                    // и исключчаются из дальнейших сортировок
+                for (int l = (arrayLength - 1); k<l; l--){
+                    if (container.data[l] != null) {
+                        container.changeItem(k, l);
+                    }
+                }
+            }
+        }
+        for (int j = 0; j < (arrayLength - 1 - checkNull); j++) {
+            for (int i = (arrayLength - 1 - checkNull); i > j; i--) {
+                if (0 > container.data[i].compareTo(container.data[i - 1])) {
+                    container.changeItem(i-1, i);
+                }
+            }
+        }
+    }
+
+    /**
+     * Метод перестановки элементов 1 и 2, согласно их индексам
+     * @param index1 индекс элемента 1
+     * @param index2 индекс элемента 2
+     */
+    public void changeItem(int index1, int index2) {
+        T tmp;
+        tmp = data[index1];
+        data[index1] = data[index2];
+        data[index2] = tmp;
     }
 }
