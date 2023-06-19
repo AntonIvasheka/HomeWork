@@ -4,8 +4,8 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithMathCopy cwmc = new CalculatorWithMathCopy();
-    long chek = 0;
+    private CalculatorWithMathCopy cwmc = new CalculatorWithMathCopy();
+    public long chek = 0;
     public long getCountOperation() {
         return chek;
     }
