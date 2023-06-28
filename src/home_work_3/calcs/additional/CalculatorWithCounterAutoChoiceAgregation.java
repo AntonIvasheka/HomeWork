@@ -19,12 +19,12 @@ public class CalculatorWithCounterAutoChoiceAgregation {
     public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithMathCopy ConstMathCopy) {
         this.ConstMathCopy = ConstMathCopy;
     }
-//    public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithOperator ConstWithOperator) {
-//        this.ConstWithOperator = ConstWithOperator;
-//    }
-//    public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithMathExtends ConstWithMathExtends) {
-//        this.ConstWithMathExtends = ConstWithMathExtends;
-//    }
+    public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithOperator ConstWithOperator) {
+        this.ConstWithOperator = ConstWithOperator;
+    }
+    public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithMathExtends ConstWithMathExtends) {
+        this.ConstWithMathExtends = ConstWithMathExtends;
+    }
     public double plusM(double a, double b) {
         incrementCountOperation();
         return ConstMathCopy.plusM(a, b);
