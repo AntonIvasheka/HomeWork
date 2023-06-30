@@ -1,9 +1,7 @@
 package home_work_6;
 
 public class EasySearch implements ISearchEngine {
-    public static void main(String[] args) {
-
-    }
+    @Override
     public long search(String text, String word) {
         long matches = 0;
         int lengthWord = word.length();

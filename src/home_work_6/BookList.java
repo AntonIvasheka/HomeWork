@@ -58,6 +58,7 @@ public class BookList {
             File file = new File(toWrite);
             try (Writer data = new FileWriter(file, true)) {
                 data.write(bookMap.get(bookName) + " - " + word + " - " + (searchWord.search(all, word)) + "\n");
+                all = "";
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
