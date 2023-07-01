@@ -24,8 +24,10 @@ public class StreamSearch {
                 chekBook++;
                 bookMap.put(chekBook, path);
             }
-        }catch(Exception e) {
+        }catch(NullPointerException e) {
             e.printStackTrace();
+            System.out.println("Не верно указан путь к целевому каталогу");
+            return; // Понимаю, что "костыль", но рекурсию не успею сделать
         }
         while (true) {
             ExecutorService executor = Executors.newFixedThreadPool(5);
