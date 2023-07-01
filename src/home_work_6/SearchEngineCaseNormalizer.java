@@ -20,6 +20,7 @@ public class SearchEngineCaseNormalizer implements ISearchEngine {
                 newWord = newWord.substring(0, word.length() - lengthEndInWord);
             }
         }
-        return searchEngine.search(text, newWord + "[а-я]{0,3}");
+        return searchEngine.search(text, newWord + "[\"а\", \"я\", \"ы\", \"е\", \"и\", \"у\", \"ю\", \"ой\", \"ей\", \"о\"\n" +
+                "                ,\"ом\", \"ем\", \"ю\", \"ов\", \"ев\", \"ей\", \"ами\", \"ями\", \"ах\", \"ях\"]{0,3}");
     }
 }

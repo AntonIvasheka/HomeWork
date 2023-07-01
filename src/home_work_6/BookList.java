@@ -25,8 +25,10 @@ public class BookList {
                 chekBook++;
                 bookMap.put(chekBook, path);
             }
-        }catch(Exception e) {
+        }catch(NullPointerException e) {
             e.printStackTrace();
+            System.out.println("Не верно указан путь к целевому каталогу");
+            return; // Понимаю, что "костыль", но рекурсию не успею сделать
         }
         for(Map.Entry<Integer, String> entry: bookMap.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
