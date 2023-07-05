@@ -1,6 +1,6 @@
 package tests.home_work_6;
 
-import home_work_6.EasySearch;
+import home_work_6.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -95,8 +95,59 @@ public class HW6tests {
      */
     public void test12() {
         EasySearch test1 = new EasySearch();
-        String text = "один два,один";
-        String word = "два";
+        String text = "один Один два,один, Один, ";
+        String word = "Один";
+        Assertions.assertEquals(2,test1.search(text, word));
+    }
+    @Test
+    /**
+     * С учетом регистра
+     */
+    public void test13() {
+        RegExSearch test1 = new RegExSearch();
+        String text = " Один two,Один";
+        String word = "Один";
+        Assertions.assertEquals(2,test1.search(text, word));
+    }
+    @Test
+    /**
+     * С удалением пунктуации
+     */
+    public void test14() {
+        SearchEnginePunctuationNormalizer test1 = new SearchEnginePunctuationNormalizer(new RegExSearch());
+        String text = "Один  два!";
+        String word = "Один";
+        Assertions.assertEquals(1,test1.search(text, word));
+    }
+    @Test
+    /**
+     * Без учёта регистра
+     */
+    public void test15() {
+        SearchEngineWithoutReg test1 = new SearchEngineWithoutReg(new RegExSearch());
+        String text = " один  two,Одинодин!";
+        String word = "Один";
+        Assertions.assertEquals(1,test1.search(text, word));
+    }
+    @Test
+    /**
+     * Бабушки разных вариаций
+     */
+    public void test16() {
+        SearchEngineCaseNormalizer test1 = new SearchEngineCaseNormalizer(new RegExSearch());
+        String text = "бабушка, бабушки с бабушками!";
+        String word = "бабушка";
+        Assertions.assertEquals(3,test1.search(text, word));
+    }
+    @Test
+    /**
+     *Тест показывает ущербность поиска, таким образом), то же будет со словом "боец" -
+     * непостижим и могуч русскиий язык
+     */
+    public void test17() {
+        SearchEngineCaseNormalizer test1 = new SearchEngineCaseNormalizer(new RegExSearch());
+        String text = "заяц, зайцы с зайцами !";
+        String word = "заяц";
         Assertions.assertEquals(1,test1.search(text, word));
     }
 }
